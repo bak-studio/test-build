@@ -14,6 +14,8 @@ RUN npm install
 # Except the one defined in '.dockerignore'
 COPY . ./
 
+RUN npm run build
+
 # Choose NGINX as our base Docker image
 FROM nginx:alpine
 
