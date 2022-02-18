@@ -9,7 +9,7 @@ RUN npm run build
 
 # server environment
 FROM nginx:alpine
-COPY nginx.conf /etc/nginx/conf.d/configfile.template
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/configfile.template
 
 COPY --from=react-build /app/build/ /usr/share/nginx/html
 
