@@ -1,7 +1,11 @@
-FROM node:13-slim
+FROM node:latest
 
 WORKDIR /app
 
-ADD . /app
+COPY package.json ./
 
-CMD node server.js
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run build"]
